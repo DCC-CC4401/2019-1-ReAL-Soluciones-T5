@@ -1,4 +1,4 @@
-# Plataforma de Evaluacion CC4401
+# Plataforma de Evaluación CC4401
 Plataforma que permite la gestión de cursos, evaluaciones y evaluadores, cuyo objetivo principal es 
 facilitar el proceso de evaluación de presentaciones del ramo CC4401, o cualquier ramo que evalúe en
 base a rúbricas.
