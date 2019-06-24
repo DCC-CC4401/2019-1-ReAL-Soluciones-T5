@@ -6,6 +6,8 @@
         <h1 class="w3-xxxlarge w3-text-red"><b>Bienvenido al sistema de evaluación</b></h1>
         <hr style="width:50px;border:5px solid red" class="w3-round">
         <p>
+    {% load evaluador_privileges %}
+    {% if request.user|is_admin %}
         <h3>Formulario para agregar profesor</h3></p>
 
     <form action="{% url 'evaluadores:add_profesor' %}" method="post">
@@ -15,6 +17,8 @@
         </table>
         <button class="w3-button w3-block w3-red w3-section w3-padding" type="submit">Agregar</button>
     </form>
+
+    {% endif %}
 
     <table class="w3-table">
         {% for profesor in profesores_list %}
