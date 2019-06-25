@@ -52,7 +52,10 @@
                                 </a>
                             </td>
 
+                            {# ¡No se pueden borrar profesores! #}
+
                             <td class="w3-light-gray w3-right-align" style="vertical-align:middle">
+                            {% if not evaluador|evaluador_is_admin %}
                                 <form action="{% url 'evaluadores:delete_evaluador' %}" method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="ID" value="{{ evaluador.pk }}">
@@ -61,6 +64,7 @@
                                     </button>
                                 </form>
                             </td>
+                            {% endif %}
                         {% endif %}
                         <!-- Javascript scan for evaluadores with format {(name,lastname,email),(name,lastname,email)...}-->
                         <script>
