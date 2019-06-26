@@ -7,7 +7,7 @@
         <hr style="width:50px;border:5px solid red" class="w3-round">
         <p>
     {% load evaluador_privileges %}
-    {% if request.user|is_admin %}
+    {% if request.user|is_admin or request.user.is_superuser %}
         <h3>Formulario para agregar profesor</h3></p>
 
     <form action="{% url 'evaluadores:add_profesor' %}" method="post">
